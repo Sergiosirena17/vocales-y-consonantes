@@ -1,0 +1,324 @@
+#include <cstring>
+#include <iostream>
+using namespace std;
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include <Windows.h>
+#include "bool.h"
+
+
+char matrix[10][10];
+int i;
+int f;
+
+void tablero(int a,int l){
+
+	
+	srand(time(0));
+		
+	for(i = 1; i <= a; i++) {
+		
+		for(f = 1; f <= l; f++) {
+			
+		int mayus = 65 + (rand()% 25); //67
+		int minus = 97 + (rand()% 25);  //108
+		int h = 1 + (rand()% 2);   //2
+		
+		if(h == 1){
+			matrix[i][f] = mayus;
+			cout << matrix[i][f] << " ";
+			
+		}
+		else if(h == 2){
+			matrix[i][f] = minus;			
+			cout << matrix[i][f] << " ";
+			
+		}
+		
+		
+		}
+		cout << endl;
+	}
+	usleep(2000000);
+	system("cls");
+}
+
+
+void vocales(){
+	
+	std::system("clear");
+	
+	for(int i = 1; i <= 10; i++) {
+		
+		for(int f = 1; f <= 10; f++) {
+			
+			if(matrix[i][f] == 'A'){
+				char *Aptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				
+				
+				continue;
+			}
+	
+			else if(matrix[i][f] == 'E'){
+				char *Eptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'I'){
+				char *Iptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'O'){
+				char *Optr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'U'){
+				char *Uptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'a'){
+				char *aptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'e'){
+				char *eptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'i'){
+				char *iptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'o'){
+				char *optr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'u'){
+				char *uptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1B[0m" << " ";
+				continue;
+			}
+			
+			cout << matrix[i][f] << " ";
+				
+		
+
+		}
+		
+		cout << endl;
+	}
+}
+
+void reloj(){
+	int i;
+	int j;
+	int contador = 0;
+	while(contador < 8){
+/////////////////////////////////ESQUINAS////////////////////////////////		
+		if((i == 1)&&(f==1)){	
+		
+				if((matrix[1][2] != 'A')&&(matrix[1][2] != 'E')&&(matrix[1][2] != 'I')&&(matrix[1][2] != 'O')&&(matrix[1][2] != 'U')&&(matrix[1][2] != 'a')&&(matrix[1][2] != 'e')&&(matrix[1][2] != 'i')&&(matrix[1][2] != 'o')&&(matrix[1][2] != 'u')){
+				cout<<"\x1b[34m"<<matrix[1][2]<<"\x1B[0m"<<endl;
+				ocupado_matrix_1_2 = true;
+				break;
+				}
+				else if((matrix[2][2] != 'A')&&(matrix[2][2] != 'E')&&(matrix[2][2] != 'I')&&(matrix[2][2] != 'O')&&(matrix[2][2] != 'U')&&(matrix[2][2] != 'a')&&(matrix[2][2] != 'e')&&(matrix[2][2] != 'i')&&(matrix[2][2] != 'o')&&(matrix[2][2] != 'u')){
+				cout<<"\x1b[34m"<<matrix[2][2]<<"\x1B[0m"<<endl;
+				ocupado_matrix_2_2 = true;
+				break;
+				}
+				else if((matrix[2][1] != 'A')&&(matrix[2][1] != 'E')&&(matrix[2][1] != 'I')&&(matrix[2][1] != 'O')&&(matrix[2][1] != 'U')&&(matrix[2][1] != 'a')&&(matrix[2][1] != 'e')&&(matrix[2][1] != 'i')&&(matrix[2][1] != 'o')&&(matrix[2][1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[2][1]<<"\x1B[0m"<<endl;
+				ocupado_matrix_2_1 = true;
+				break;
+				}
+				else{
+				break;
+				}
+				
+		}
+		else if((i == 1)&&(f==10)){
+			
+				if((matrix[2][10] != 'A')&&(matrix[2][10] != 'E')&&(matrix[2][10] != 'I')&&(matrix[2][10] != 'O')&&(matrix[2][10] != 'U')&&(matrix[2][10] != 'a')&&(matrix[2][10] != 'e')&&(matrix[2][10] != 'i')&&(matrix[2][1] != 'o')&&(matrix[2][1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[2][10]<<"\x1B[0m"<<endl;
+				ocupado_matrix_2_10 = true;
+				break;
+				}
+				else if((matrix[2][9] != 'A')&&(matrix[2][9] != 'E')&&(matrix[2][9] != 'I')&&(matrix[2][9] != 'O')&&(matrix[2][9] != 'U')&&(matrix[2][9] != 'a')&&(matrix[2][9] != 'e')&&(matrix[2][9] != 'i')&&(matrix[2][9] != 'o')&&(matrix[2][9] != 'u')){
+				cout<<"\x1b[34m"<<matrix[2][9]<<"\x1B[0m"<<endl;
+				ocupado_matrix_2_9 = true;
+				break;
+				}
+				else if((matrix[1][9] != 'A')&&(matrix[1][9] != 'E')&&(matrix[1][9] != 'I')&&(matrix[1][9] != 'O')&&(matrix[1][9] != 'U')&&(matrix[1][9] != 'a')&&(matrix[1][9] != 'e')&&(matrix[1][9] != 'i')&&(matrix[1][9] != 'o')&&(matrix[1][9] != 'u')){
+				cout<<"\x1b[34m"<<matrix[1][9]<<"\x1B[0m"<<endl;
+				ocupado_matrix_1_9 = true;
+				break;
+				}
+				else{
+					break;
+				}
+				
+			
+		}
+		else if((i == 10)&&(f==1)){
+			
+				if((matrix[9][1] != 'A')&&(matrix[9][1] != 'E')&&(matrix[9][1] != 'I')&&(matrix[9][1] != 'O')&&(matrix[9][1] != 'U')&&(matrix[9][1] != 'a')&&(matrix[9][1] != 'e')&&(matrix[9][1] != 'i')&&(matrix[9][1] != 'o')&&(matrix[9][1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[9][1]<<"\x1B[0m"<<endl;
+				ocupado_matrix_9_1 = true;
+				break;
+				}
+				else if((matrix[9][2] != 'A')&&(matrix[9][2] != 'E')&&(matrix[9][2] != 'I')&&(matrix[9][2] != 'O')&&(matrix[9][2] != 'U')&&(matrix[9][2] != 'a')&&(matrix[9][2] != 'e')&&(matrix[9][2] != 'i')&&(matrix[9][2] != 'o')&&(matrix[9][2] != 'u')){
+				cout<<"\x1b[34m"<<matrix[9][2]<<"\x1B[0m"<<endl;
+				ocupado_matrix_9_2 = true;
+				break;
+				}
+				else if((matrix[10][2] != 'A')&&(matrix[10][2] != 'E')&&(matrix[10][2] != 'I')&&(matrix[10][2] != 'O')&&(matrix[10][2] != 'U')&&(matrix[10][2] != 'a')&&(matrix[10][2] != 'e')&&(matrix[10][2] != 'i')&&(matrix[10][2] != 'o')&&(matrix[10][2] != 'u')){
+				cout<<"\x1b[34m"<<matrix[1][9]<<"\x1B[0m"<<endl;
+				ocupado_matrix_10_2 = true;
+				break;
+				}
+				else{
+				break;
+				}
+			
+			
+		}
+		else if((i == 10)&&(f==10)){
+				if((matrix[9][10] != 'A')&&(matrix[9][10] != 'E')&&(matrix[9][10] != 'I')&&(matrix[9][10] != 'O')&&(matrix[9][10] != 'U')&&(matrix[9][10] != 'a')&&(matrix[9][10] != 'e')&&(matrix[9][10] != 'i')&&(matrix[9][10] != 'o')&&(matrix[9][10] != 'u')){
+				cout<<"\x1b[34m"<<matrix[9][10]<<"\x1B[0m"<<endl;
+				ocupado_matrix_9_10 = true;
+				break;
+				}
+				else if((matrix[10][9] != 'A')&&(matrix[10][9] != 'E')&&(matrix[10][9] != 'I')&&(matrix[10][9] != 'O')&&(matrix[10][9] != 'U')&&(matrix[10][9] != 'a')&&(matrix[10][9] != 'e')&&(matrix[10][9] != 'i')&&(matrix[10][9] != 'o')&&(matrix[10][9] != 'u')){
+				cout<<"\x1b[34m"<<matrix[10][9]<<"\x1B[0m"<<endl;
+				ocupado_matrix_10_9 = true;
+				break;
+				}
+				else if((matrix[9][9] != 'A')&&(matrix[9][9] != 'E')&&(matrix[9][9] != 'I')&&(matrix[9][9] != 'O')&&(matrix[9][9] != 'U')&&(matrix[9][9] != 'a')&&(matrix[9][9] != 'e')&&(matrix[9][9] != 'i')&&(matrix[9][9] != 'o')&&(matrix[9][9] != 'u')){
+				cout<<"\x1b[34m"<<matrix[9][9]<<"\x1B[0m"<<endl;
+				ocupado_matrix_9_9 = true;
+				break;
+				}
+				else{
+				break;
+				}
+		}
+//////////////////////////LADOS////////////////////////////////////
+
+	/////////////////////PARALELO IZQUIERDO///////////////////
+	
+		if (f == 1){
+			
+			if((matrix[i-1][f] != 'A')&&(matrix[i-1][f] != 'E')&&(matrix[i-1][f] != 'I')&&(matrix[i-1][f] != 'O')&&(matrix[i-1][f] != 'U')&&(matrix[i-1][f] != 'a')&&(matrix[i-1][f] != 'e')&&(matrix[i-1][f] != 'i')&&(matrix[i-1][f] != 'o')&&(matrix[i-1][f] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f]<<"\x1B[0m"<<endl;
+				char str2[4]="i_j";
+				strcat(str,str2);
+				bool str = true;
+				break;
+			}
+			else if((matrix[i-1][f+1] != 'A')&&(matrix[i-1][f+1] != 'E')&&(matrix[i-1][f+1] != 'I')&&(matrix[i-1][f+1] != 'O')&&(matrix[i-1][f+1] != 'U')&&(matrix[i-1][f+1] != 'a')&&(matrix[i-1][f+1] != 'e')&&(matrix[i-1][f+1] != 'i')&&(matrix[i-1][f+1] != 'o')&&(matrix[i-1][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i][f+1] != 'A')&&(matrix[i][f+1] != 'E')&&(matrix[i][f+1] != 'I')&&(matrix[i][f+1] != 'O')&&(matrix[i][f+1] != 'U')&&(matrix[i][f+1] != 'a')&&(matrix[i][f+1] != 'e')&&(matrix[i][f+1] != 'i')&&(matrix[i][f+1] != 'o')&&(matrix[i][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i+1][f+1] != 'A')&&(matrix[i+1][f+1] != 'E')&&(matrix[i+1][f+1] != 'I')&&(matrix[i+1][f+1] != 'O')&&(matrix[i+1][f+1] != 'U')&&(matrix[i+1][f+1] != 'a')&&(matrix[i+1][f+1] != 'e')&&(matrix[i+1][f+1] != 'i')&&(matrix[i+1][f+1] != 'o')&&(matrix[i+1][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i-1][f] != 'A')&&(matrix[i-1][f] != 'E')&&(matrix[i-1][f] != 'I')&&(matrix[i-1][f] != 'O')&&(matrix[i-1][f] != 'U')&&(matrix[i-1][f] != 'a')&&(matrix[i-1][f] != 'e')&&(matrix[i-1][f] != 'i')&&(matrix[i-1][f] != 'o')&&(matrix[i-1][f] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f]<<"\x1B[0m"<<endl;
+				break;
+			}
+			
+		}
+		
+	//////////////////////////////COLUMNA DE ARRIBA//////////////////
+		else if(f==1){
+			if((matrix[i-1][f] != 'A')&&(matrix[i-1][f] != 'E')&&(matrix[i-1][f] != 'I')&&(matrix[i-1][f] != 'O')&&(matrix[i-1][f] != 'U')&&(matrix[i-1][f] != 'a')&&(matrix[i-1][f] != 'e')&&(matrix[i-1][f] != 'i')&&(matrix[i-1][f] != 'o')&&(matrix[i-1][f] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i-1][f+1] != 'A')&&(matrix[i-1][f+1] != 'E')&&(matrix[i-1][f+1] != 'I')&&(matrix[i-1][f+1] != 'O')&&(matrix[i-1][f+1] != 'U')&&(matrix[i-1][f+1] != 'a')&&(matrix[i-1][f+1] != 'e')&&(matrix[i-1][f+1] != 'i')&&(matrix[i-1][f+1] != 'o')&&(matrix[i-1][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i][f+1] != 'A')&&(matrix[i][f+1] != 'E')&&(matrix[i][f+1] != 'I')&&(matrix[i][f+1] != 'O')&&(matrix[i][f+1] != 'U')&&(matrix[i][f+1] != 'a')&&(matrix[i][f+1] != 'e')&&(matrix[i][f+1] != 'i')&&(matrix[i][f+1] != 'o')&&(matrix[i][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i+1][f+1] != 'A')&&(matrix[i+1][f+1] != 'E')&&(matrix[i+1][f+1] != 'I')&&(matrix[i+1][f+1] != 'O')&&(matrix[i+1][f+1] != 'U')&&(matrix[i+1][f+1] != 'a')&&(matrix[i+1][f+1] != 'e')&&(matrix[i+1][f+1] != 'i')&&(matrix[i+1][f+1] != 'o')&&(matrix[i+1][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i+1][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i+1][f] != 'A')&&(matrix[i+1][f] != 'E')&&(matrix[i+1][f] != 'I')&&(matrix[i+1][f] != 'O')&&(matrix[i+1][f] != 'U')&&(matrix[i+1][f] != 'a')&&(matrix[i+1][f] != 'e')&&(matrix[i+1][f] != 'i')&&(matrix[i+1][f] != 'o')&&(matrix[i+1][f] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i+1][f]<<"\x1B[0m"<<endl;
+				break;
+			}
+			
+			
+		}
+		
+	////////////////////////////PARALELO DERECHO//////////77777777
+		if (f == 10){
+			
+			if((matrix[i-1][f] != 'A')&&(matrix[i-1][f] != 'E')&&(matrix[i-1][f] != 'I')&&(matrix[i-1][f] != 'O')&&(matrix[i-1][f] != 'U')&&(matrix[i-1][f] != 'a')&&(matrix[i-1][f] != 'e')&&(matrix[i-1][f] != 'i')&&(matrix[i-1][f] != 'o')&&(matrix[i-1][f] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i-1][f-1] != 'A')&&(matrix[i-1][f+1] != 'E')&&(matrix[i-1][f+1] != 'I')&&(matrix[i-1][f+1] != 'O')&&(matrix[i-1][f+1] != 'U')&&(matrix[i-1][f+1] != 'a')&&(matrix[i-1][f+1] != 'e')&&(matrix[i-1][f+1] != 'i')&&(matrix[i-1][f+1] != 'o')&&(matrix[i-1][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i][f+1] != 'A')&&(matrix[i][f+1] != 'E')&&(matrix[i][f+1] != 'I')&&(matrix[i][f+1] != 'O')&&(matrix[i][f+1] != 'U')&&(matrix[i][f+1] != 'a')&&(matrix[i][f+1] != 'e')&&(matrix[i][f+1] != 'i')&&(matrix[i][f+1] != 'o')&&(matrix[i][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i+1][f-1] != 'A')&&(matrix[i+1][f+1] != 'E')&&(matrix[i+1][f+1] != 'I')&&(matrix[i+1][f+1] != 'O')&&(matrix[i+1][f+1] != 'U')&&(matrix[i+1][f+1] != 'a')&&(matrix[i+1][f+1] != 'e')&&(matrix[i+1][f+1] != 'i')&&(matrix[i+1][f+1] != 'o')&&(matrix[i+1][f+1] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f+1]<<"\x1B[0m"<<endl;
+				break;
+			}
+			else if((matrix[i-1][f] != 'A')&&(matrix[i-1][f] != 'E')&&(matrix[i-1][f] != 'I')&&(matrix[i-1][f] != 'O')&&(matrix[i-1][f] != 'U')&&(matrix[i-1][f] != 'a')&&(matrix[i-1][f] != 'e')&&(matrix[i-1][f] != 'i')&&(matrix[i-1][f] != 'o')&&(matrix[i-1][f] != 'u')){
+				cout<<"\x1b[34m"<<matrix[i-1][f]<<"\x1B[0m"<<endl;
+				break;
+			}
+			
+		}
+		
+	}
+	
+	
+}
+
+
+int main(){
+	
+	
+	
+	cout << "///////////////////////////////////////////" << endl;
+    cout << "                " << "SÃ­labos" << "            " << endl; //9
+	cout << "       " << "Olga Barreros y Sergio Sirena" << endl; //36
+	cout << "///////////////////////////////////////////" << endl;
+	tablero(10,10);
+	vocales();
+	
+	
+	return 0;
+	
+}
+
+//Profe lo que hemos avanzado esta todo en la funciÃ³n reloj, esta ya revisa las consonates, pero no la terminamos auqnue
+//sintacticamente esta bien porque compila, pero esta incompleta
+
+
+
