@@ -1,0 +1,127 @@
+#include <cstring>
+#include <iostream>
+using namespace std;
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include <Windows.h>
+
+//"\x1b[34m"
+using namespace std;
+
+char matrix[10][10];
+
+void tablero(int a,int l){
+	
+	srand(time(0));
+		
+	for(int i = 0; i <= a; i++) {
+		
+		for(int f =0; f <= l; f++) {
+			
+		int mayus = 65 + (rand()% 25); //67
+		int minus = 97 + (rand()% 25);  //108
+		int h = 1 + (rand()% 2);   //2
+		
+		if(h == 1){
+			matrix[i][f] = mayus;
+			cout << matrix[i][f] << " ";
+			
+		}
+		else if(h == 2){
+			matrix[i][f] = minus;			
+			cout << matrix[i][f] << " ";
+			
+		}
+		
+		
+		}
+		cout << endl;
+	}
+	usleep(5000000);
+	system("cls");
+}
+
+void vocales(){
+	
+	for(int i = 0; i <= 10; i++) {
+		
+		for(int f =0; f <= 10; f++) {
+			
+			if(matrix[i][f] == 'A'){
+				char *Aptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'E'){
+				char *Eptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'I'){
+				char *Iptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'O'){
+				char *Optr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'U'){
+				char *Uptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'a'){
+				char *aptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'e'){
+				char *eptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'i'){
+				char *iptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'o'){
+				char *optr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			else if(matrix[i][f] == 'u'){
+				char *uptr = &(matrix[i][f]);
+				cout <<"\x1b[34m"<< matrix[i][f]<<"\x1b[34m" << " ";
+				continue;
+			}
+			
+			
+			cout << matrix[i][f] << " ";
+				
+		
+	
+	
+		}
+		cout << endl;
+	}
+}
+
+
+
+
+int main(){
+	
+	
+	tablero(10,10);
+	vocales();
+	
+}
+
+
+
+
+
